@@ -1,0 +1,1 @@
+"""REG generative teacher architectures."""

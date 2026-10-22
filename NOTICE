@@ -1,0 +1,12 @@
+GPKD: Generation-to-Perception Knowledge Distillation
+
+This source distribution contains code adapted from DINOv2 by Meta Platforms,
+Inc. and affiliates, and from REG / REPA. Original copyright and license
+notices are retained in their respective source files and license files.
+
+GPKD integration additions and modifications are distributed under the root
+Apache License, Version 2.0, except REG-derived generation code, which retains
+the MIT terms in dinov2/gpkd/generation/LICENSE.
+
+Optional inherited extensions and pretrained models retain their own licenses;
+see THIRD_PARTY_NOTICES.md. This repository does not distribute model weights.

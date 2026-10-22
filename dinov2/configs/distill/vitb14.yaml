@@ -1,0 +1,34 @@
+dino:
+  head_n_prototypes: 131072
+  head_bottleneck_dim: 384
+  loss_weight: 1.0
+  koleo_loss_weight: 0.0
+train:
+  batch_size_per_gpu: 128  # effective setting in the supplied distill.sh
+  dataset_path: ImageNet:split=TRAIN
+  centering: sinkhorn_knopp
+  token_path: null
+  head_warmup_epochs: 8
+student:
+  arch: vit_base
+  patch_size: 14
+  drop_path_rate: 0.4
+  ffn_layer: mlp
+  block_chunks: 4
+teacher:
+  momentum_teacher: 0.994
+optim:
+  epochs: 20
+  weight_decay_end: 0.2
+  base_lr: 2.0e-4  # stage-2 head learning rate for a batch size of 1024
+  stage1_head_base_lr: 2.0e-4  # stage-1 head warmup learning rate
+  stage2_backbone_base_lr: 2.0e-5  # stage-2 backbone learning rate (very low)
+  warmup_epochs: 5
+  layerwise_decay: 1.0
+crops:
+  local_crops_size: 98
+ibot:
+  loss_weight: 1.0  # enabled by the supplied distill.sh
+  separate_head: true
+evaluation:
+  eval_period_iterations: 6250

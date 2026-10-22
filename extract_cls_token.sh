@@ -1,0 +1,12 @@
+accelerate launch --multi_gpu --num_processes 8 dinov2.gpkd.generation.extract_cls_token \
+    --teacher-ckpt <PATH/TO/REG_CHECKPOINT> \
+    --data-dir <PATH/TO/DATASET> \
+    --path-type "linear" \
+    --encoder-depth 8 \
+    --cls-dim 768 \
+    --num-steps 5 \
+    --batch-size 256 \
+    --mode ode --noise-time 0.99 \
+    --cfg-scale 1.0 --cls-cfg-scale 0.0 \
+    --heun \
+    --output-dir <PATH/TO/OUTPUT/DIR>
